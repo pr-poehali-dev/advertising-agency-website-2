@@ -6,6 +6,7 @@ import { QRCodeSVG } from 'qrcode.react';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -151,6 +152,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             <div className="text-2xl font-bold text-gray-900">Veloffon</div>
+            
             <div className="hidden md:flex space-x-8">
               {[
                 { id: 'home', label: 'Главная' },
@@ -171,7 +173,41 @@ const Index = () => {
                 </button>
               ))}
             </div>
+
+            <button
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <Icon name={mobileMenuOpen ? 'X' : 'Menu'} size={28} className="text-gray-900" />
+            </button>
           </div>
+
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 animate-fade-in">
+              {[
+                { id: 'home', label: 'Главная' },
+                { id: 'services', label: 'Услуги' },
+                { id: 'portfolio', label: 'Портфолио' },
+                { id: 'team', label: 'Команда' },
+                { id: 'testimonials', label: 'Отзывы' },
+                { id: 'contact', label: 'Контакты' }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`block w-full text-left py-3 px-4 text-base font-medium transition-colors hover:bg-gray-50 ${
+                    activeSection === item.id ? 'text-primary' : 'text-gray-900'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </nav>
 
@@ -179,17 +215,17 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 Создаём<br />
                 <span className="text-primary">рекламу</span><br />
                 которая работает
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
                 Превращаем ваши идеи в успешные маркетинговые кампании с измеримыми результатами
               </p>
               <Button 
                 size="lg" 
-                className="text-lg px-8 h-14"
+                className="text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 w-full sm:w-auto"
                 onClick={() => scrollToSection('contact')}
               >
                 Начать проект
@@ -199,20 +235,20 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/c389ce5d-c824-4dfb-b906-c05f5ea2d47d.jpg"
                 alt="Veloffon Agency"
-                className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-2xl shadow-2xl"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-20 px-6 bg-gray-50">
+      <section id="services" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4 text-center">Услуги</h2>
-          <p className="text-xl text-gray-600 mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Услуги</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 sm:mb-16 text-center max-w-2xl mx-auto px-4">
             Полный спектр маркетинговых решений для вашего бизнеса
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <Card 
                 key={index} 
@@ -231,13 +267,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 px-6">
+      <section id="portfolio" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4 text-center">Портфолио</h2>
-          <p className="text-xl text-gray-600 mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Портфолио</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 sm:mb-16 text-center max-w-2xl mx-auto px-4">
             Кейсы, которыми мы гордимся
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {portfolio.map((project, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="overflow-hidden rounded-2xl mb-6 shadow-lg">
@@ -259,13 +295,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="team" className="py-20 px-6 bg-gray-50">
+      <section id="team" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4 text-center">Команда</h2>
-          <p className="text-xl text-gray-600 mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Команда</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 sm:mb-16 text-center max-w-2xl mx-auto px-4">
             Профессионалы, создающие результат
           </p>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {team.map((member, index) => (
               <Card key={index} className="p-6 text-center border-0 hover:shadow-xl transition-shadow duration-300">
                 <div className="w-24 h-24 rounded-full mx-auto mb-6 overflow-hidden">
@@ -284,13 +320,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="testimonials" className="py-20 px-6">
+      <section id="testimonials" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4 text-center">Отзывы</h2>
-          <p className="text-xl text-gray-600 mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Отзывы</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 sm:mb-16 text-center max-w-2xl mx-auto px-4">
             Что говорят наши клиенты
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-8 border-0 shadow-lg">
                 <Icon name="Quote" className="text-primary mb-6" size={32} />
@@ -305,27 +341,27 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-6 bg-gray-900 text-white">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-900 text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-5xl font-bold mb-6">Готовы начать?</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Готовы начать?</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
             Свяжитесь с нами, и мы обсудим ваш проект
           </p>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center mb-12">
-            <div className="flex flex-col gap-6">
-              <a href="mailto:hello@veloffon.com" className="flex items-center gap-3 text-lg hover:text-primary transition-colors">
+          <div className="flex flex-col md:flex-row gap-6 sm:gap-8 justify-center items-center mb-8 sm:mb-12">
+            <div className="flex flex-col gap-4 sm:gap-6">
+              <a href="mailto:hello@veloffon.com" className="flex items-center gap-3 text-base sm:text-lg hover:text-primary transition-colors">
                 <Icon name="Mail" size={24} />
-                hello@veloffon.com
+                <span className="break-all">hello@veloffon.com</span>
               </a>
-              <a href="tel:+79991234567" className="flex items-center gap-3 text-lg hover:text-primary transition-colors">
+              <a href="tel:+79991234567" className="flex items-center gap-3 text-base sm:text-lg hover:text-primary transition-colors">
                 <Icon name="Phone" size={24} />
                 +7 (999) 123-45-67
               </a>
             </div>
-            <div className="bg-white p-4 rounded-xl">
+            <div className="bg-white p-3 sm:p-4 rounded-xl">
               <QRCodeSVG 
                 value="https://advertising-agency-website-2--preview.poehali.dev/" 
-                size={120}
+                size={100}
                 level="H"
                 includeMargin={false}
               />
@@ -334,7 +370,7 @@ const Index = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="text-lg px-8 h-14 border-white text-white hover:bg-white hover:text-gray-900"
+            className="text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900"
           >
             Отправить заявку
           </Button>
