@@ -104,25 +104,25 @@ const Index = () => {
       name: 'Анна Соколова',
       position: 'Креативный директор',
       bio: '12 лет опыта в рекламе. Лауреат Red Apple и Epica Awards.',
-      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/a56889ab-99be-4a54-9f97-b463e773ebeb.jpg'
     },
     {
       name: 'Дмитрий Волков',
       position: 'Стратег',
       bio: 'Эксперт в маркетинговых исследованиях. Работал с 50+ брендами.',
-      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/5706194e-e89c-4e62-8fc1-8e24380c4637.jpg'
     },
     {
       name: 'Елена Морозова',
       position: 'Digital-директор',
       bio: 'Специалист по performance-маркетингу. ROI — главный приоритет.',
-      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/80023ab2-dc8b-4fa1-98c2-d68d309be38e.jpg'
     },
     {
       name: 'Максим Кузнецов',
       position: 'Арт-директор',
       bio: 'Создаю визуальные решения, которые продают и вдохновляют.',
-      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/f1b6189b-1a46-4253-9517-3041d69eced3.jpg'
     }
   ];
 
