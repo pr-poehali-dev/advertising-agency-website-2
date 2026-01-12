@@ -142,7 +142,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            <div className="text-2xl font-bold text-gray-900">AGENCY</div>
+            <div className="text-2xl font-bold text-gray-900">Veloffon</div>
             <div className="hidden md:flex space-x-8">
               {[
                 { id: 'home', label: 'Главная' },
@@ -320,7 +320,7 @@ const Index = () => {
 
       <footer className="bg-gray-950 text-gray-400 py-8 px-6">
         <div className="container mx-auto text-center">
-          <p className="text-sm">© 2024 AGENCY. Все права защищены.</p>
+          <p className="text-sm">© 2024 Veloffon. Все права защищены.</p>
         </div>
       </footer>
     </div>
