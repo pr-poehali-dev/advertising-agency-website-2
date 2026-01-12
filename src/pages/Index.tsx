@@ -86,7 +86,7 @@ const Index = () => {
       title: 'Digital-кампания для fashion-бренда',
       category: 'Digital-маркетинг',
       result: '+250% трафик на сайт',
-      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/4aceff5c-891a-420b-96b4-c41115f97dae.jpg'
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/51b03b39-4c5f-4daa-9af7-29f2c93aaa42.jpg'
     },
     {
       title: 'Запуск нового продукта IT-компании',
