@@ -313,9 +313,9 @@ const Index = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center mb-12">
             <div className="flex flex-col gap-6">
-              <a href="mailto:hello@agency.com" className="flex items-center gap-3 text-lg hover:text-primary transition-colors">
+              <a href="mailto:hello@veloffon.com" className="flex items-center gap-3 text-lg hover:text-primary transition-colors">
                 <Icon name="Mail" size={24} />
-                hello@agency.com
+                hello@veloffon.com
               </a>
               <a href="tel:+79991234567" className="flex items-center gap-3 text-lg hover:text-primary transition-colors">
                 <Icon name="Phone" size={24} />
