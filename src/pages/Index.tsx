@@ -324,7 +324,7 @@ const Index = () => {
             </div>
             <div className="bg-white p-4 rounded-xl">
               <QRCodeSVG 
-                value="https://veloffon.ru" 
+                value="https://advertising-agency-website-2--preview.poehali.dev/" 
                 size={120}
                 level="H"
                 includeMargin={false}
