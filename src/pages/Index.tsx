@@ -197,7 +197,7 @@ const Index = () => {
             </div>
             <div className="animate-slide-up">
               <img 
-                src="https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/4aceff5c-891a-420b-96b4-c41115f97dae.jpg"
+                src="https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/eb34f82f-0228-43b4-9453-696afd88a2e5.jpg"
                 alt="Creative Agency"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />
