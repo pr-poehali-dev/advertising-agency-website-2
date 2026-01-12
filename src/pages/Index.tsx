@@ -80,18 +80,21 @@ const Index = () => {
       title: 'Ребрендинг производителя мебели',
       category: 'Брендинг',
       result: '+180% узнаваемость бренда',
+      company: 'FashionHouse',
       image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/b80f1723-eab4-47ea-ab93-608023ba3273.jpg'
     },
     {
       title: 'Digital-кампания для fashion-бренда',
       category: 'Digital-маркетинг',
       result: '+250% трафик на сайт',
+      company: 'TechCorp',
       image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/51b03b39-4c5f-4daa-9af7-29f2c93aaa42.jpg'
     },
     {
       title: 'Запуск нового продукта IT-компании',
       category: 'Комплексная кампания',
       result: '5000+ лидов за месяц',
+      company: 'StartupLab',
       image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/7f123bd1-e34b-4f65-a10e-20511a523eac.jpg'
     }
   ];
@@ -100,22 +103,26 @@ const Index = () => {
     {
       name: 'Анна Соколова',
       position: 'Креативный директор',
-      bio: '12 лет опыта в рекламе. Лауреат Red Apple и Epica Awards.'
+      bio: '12 лет опыта в рекламе. Лауреат Red Apple и Epica Awards.',
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
     },
     {
       name: 'Дмитрий Волков',
       position: 'Стратег',
-      bio: 'Эксперт в маркетинговых исследованиях. Работал с 50+ брендами.'
+      bio: 'Эксперт в маркетинговых исследованиях. Работал с 50+ брендами.',
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
     },
     {
       name: 'Елена Морозова',
       position: 'Digital-директор',
-      bio: 'Специалист по performance-маркетингу. ROI — главный приоритет.'
+      bio: 'Специалист по performance-маркетингу. ROI — главный приоритет.',
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
     },
     {
       name: 'Максим Кузнецов',
       position: 'Арт-директор',
-      bio: 'Создаю визуальные решения, которые продают и вдохновляют.'
+      bio: 'Создаю визуальные решения, которые продают и вдохновляют.',
+      image: 'https://cdn.poehali.dev/projects/dcb8f822-4587-4801-888b-a8b934f28a38/files/d4b3690c-dbfe-4895-8999-dbf3f6cca70d.jpg'
     }
   ];
 
@@ -242,7 +249,8 @@ const Index = () => {
                 <div className="px-2">
                   <div className="text-sm text-primary font-medium mb-2">{project.category}</div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 font-medium">{project.result}</p>
+                  <p className="text-gray-600 font-medium mb-2">{project.result}</p>
+                  <p className="text-sm text-gray-500">{project.company}</p>
                 </div>
               </div>
             ))}
@@ -259,8 +267,12 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="p-6 text-center border-0 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <Icon name="User" className="text-primary" size={40} />
+                <div className="w-24 h-24 rounded-full mx-auto mb-6 overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-sm text-primary font-medium mb-4">{member.position}</p>
